@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     # Third Apps
 
     # Local Apps: app lists
+    "blog",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +127,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# default AUTH_USER 
+AUTH_USER_MODEL = 'blog.User'
