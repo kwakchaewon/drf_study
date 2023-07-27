@@ -2,12 +2,13 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
 
 class User(AbstractUser):
     first_name= None
-    birth = models.DateTimeField(blank=True, null=True)
+    birth = models.DateTimeField(blank=True, null= True)
     phone = models.CharField(
         max_length=13,
         blank=True,
@@ -31,7 +32,7 @@ class BoardCategories(models.Model):
     update_date = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'board_categories'
 
 class Board(models.Model):
