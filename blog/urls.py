@@ -6,11 +6,8 @@ from rest_framework_simplejwt.views import TokenRefreshView
 router = DefaultRouter()
 
 urlpatterns=[
-    # 회원가입
-    path('register/', RegisterAPIView.as_view() , name='register'),
-    # 로그인
-    path("login/", LoginView.as_view(), name='login'),
-    # 로그아웃
-    path("logout/", LogoutView.as_view(), name='logout'),
-    path("auth/refresh/", TokenRefreshView.as_view()), # jwt 토큰 재발급
+    path('register/', RegisterAPIView.as_view() , name='register'), # 회원가입
+    path("login/", LoginView.as_view(), name='login'),  # 로그인
+    path("logout/", LogoutView.as_view(), name='logout'),   # 로그아웃
+    path("auth/refresh/", TokenRefreshView.as_view()),  # jwt 토큰 재발급
 ]
