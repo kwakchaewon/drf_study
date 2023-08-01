@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from django.utils import timezone
 from django.conf import settings
+from .managers import UserManager
 
 # Create your models here.
 
@@ -14,6 +15,8 @@ class User(AbstractUser):
         blank=True,
         validators=[RegexValidator(r"^010-?[1-9]\d{3}-?\d{4}$")],
     )
+
+    objects = UserManager()
 
     USERNAME_FIELD = 'username'
     # REQUIRED_FIELDS = ['last_name', 'phone', 'email', 'birth']
