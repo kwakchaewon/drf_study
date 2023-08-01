@@ -1,14 +1,12 @@
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny
 from .serializers import UserSerializer
 
 from .serializers import *
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import CreateAPIView, RetrieveAPIView, DestroyAPIView
-
-import jwt
+from rest_framework.generics import CreateAPIView, DestroyAPIView
 from drf_study.settings import SECRET_KEY
 from django.contrib.auth import authenticate
 
